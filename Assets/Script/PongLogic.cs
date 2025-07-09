@@ -1,20 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PongLogic : MonoBehaviour
 {
-    public float ballSpeed = 5f;
+    private float ballSpeed = 2000f;
+    private Rigidbody2D rb;
+    private Vector2[] direction = new Vector2(-1, 1);
+    /*
+        TopLeft: -1, 1
+        TopRight: 1, 1
+        BottomLeft: -1, -1
+        BottomRight: 1, -1
+     */
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    void Start() { rb = GetComponent<Rigidbody2D>(); }
     void Update()
     {
-        
+        rb.velocity = direction * ballSpeed * Time.deltaTime;
     }
 }
