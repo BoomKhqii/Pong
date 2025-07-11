@@ -5,34 +5,24 @@ using UnityEngine;
 
 public class PongLogic : MonoBehaviour
 {
-
-    // Drag and drop Rigidbody in Inspector
     public Rigidbody2D rb;
-    [SerializeField]
     private float speed;
     private Vector2 direction;
-    private Vector2[] rand =
-    {
-        new Vector2(-1, -1),
-        new Vector2(-1, 1),
-        new Vector2(1, -1),
-        new Vector2(1, 1)
-    };
+    private Vector2[] randomDirection = { new Vector2(-1, -1), new Vector2(-1, 1), new Vector2(1, -1), new Vector2(1, 1) };
 
     void Start() { RandomStart(); }
 
     void RandomStart()
     {
         // Randomize the start direction
-        int randomIndex = UnityEngine.Random.Range(0, rand.Length);
-        direction = rand[randomIndex];
+        int randomIndex = UnityEngine.Random.Range(0, randomDirection.Length);
+        direction = randomDirection[randomIndex];
         rb.AddForce(direction * 3.0f, ForceMode2D.Impulse);
     }
 
     void Update()
     {
-        // Track velocity, it holds magnitude and direction (for collision math)
-        direction = rb.velocity;
+        direction = rb.velocity; // Track velocity, it holds magnitude and direction (for collision math)
         speed = direction.magnitude;
     }
 
@@ -41,11 +31,8 @@ public class PongLogic : MonoBehaviour
         if (collision.gameObject.CompareTag("Paddle"))
             speed += 0.5f; // Increase speed on paddle hit
 
-        // Reflect params must be normalized so we get new direction
-        Vector3 directions = Vector3.Reflect(direction.normalized, collision.contacts[0].normal);
-        rb.velocity = directions * speed;
-
-        
+        Vector3 bounceDirection = Vector3.Reflect(direction.normalized, collision.contacts[0].normal); // Reflect params must be normalized so we get new direction
+        rb.velocity = bounceDirection * speed; 
     }
 }
 
