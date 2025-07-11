@@ -5,19 +5,55 @@ using UnityEngine;
 
 public class PongLogic : MonoBehaviour
 {
-    private float ballSpeed = 2000f;
-    private Rigidbody2D rb;
-    private Vector2[] direction = new Vector2(-1, 1);
-    /*
-        TopLeft: -1, 1
-        TopRight: 1, 1
-        BottomLeft: -1, -1
-        BottomRight: 1, -1
-     */
 
-    void Start() { rb = GetComponent<Rigidbody2D>(); }
+    // Drag and drop Rigidbody in Inspector
+    public Rigidbody2D rb;
+    [SerializeField]
+    private float maintainSpeed;
+    [SerializeField]
+    private float speed;
+    private Vector2 direction;
+    private Vector2[] rand =
+    {
+        new Vector2(-1, -1),
+        new Vector2(-1, 1),
+        new Vector2(1, -1),
+        new Vector2(1, 1)
+    };
+
+    void Start() { RandomStart(); }
+
+    void RandomStart()
+    {
+        // Randomize the start direction
+        int randomIndex = UnityEngine.Random.Range(0, rand.Length);
+        direction = rand[randomIndex];
+        rb.AddForce(direction * 3.0f, ForceMode2D.Impulse);
+    }
+
     void Update()
     {
-        rb.velocity = direction * ballSpeed * Time.deltaTime;
+        // Track velocity, it holds magnitude and direction (for collision math)
+        direction = rb.velocity;
+        speed = direction.magnitude;
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Paddle"))
+        {
+            speed += 0.5f; // Increase speed on paddle hit
+        }
+
+        // Magnitude of the velocity vector is speed of the object (we will use it for constant speed so object never stop)
+        //maintainSpeed = speed;
+
+        // Reflect params must be normalized so we get new direction
+        Vector3 directions = Vector3.Reflect(direction.normalized, collision.contacts[0].normal);
+        // Like earlier wrote: velocity vector is magnitude (speed) and direction (a new one)
+        rb.velocity = directions * speed;
+
+        
     }
 }
+
