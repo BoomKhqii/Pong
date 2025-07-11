@@ -9,8 +9,6 @@ public class PongLogic : MonoBehaviour
     // Drag and drop Rigidbody in Inspector
     public Rigidbody2D rb;
     [SerializeField]
-    private float maintainSpeed;
-    [SerializeField]
     private float speed;
     private Vector2 direction;
     private Vector2[] rand =
@@ -41,16 +39,10 @@ public class PongLogic : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Paddle"))
-        {
             speed += 0.5f; // Increase speed on paddle hit
-        }
-
-        // Magnitude of the velocity vector is speed of the object (we will use it for constant speed so object never stop)
-        //maintainSpeed = speed;
 
         // Reflect params must be normalized so we get new direction
         Vector3 directions = Vector3.Reflect(direction.normalized, collision.contacts[0].normal);
-        // Like earlier wrote: velocity vector is magnitude (speed) and direction (a new one)
         rb.velocity = directions * speed;
 
         
