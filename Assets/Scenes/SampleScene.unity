@@ -963,6 +963,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 632800e0aaaa18740948360bf991f433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerSpeed: 4.5
+  rb: {fileID: 0}
 --- !u!61 &906278037
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1048,7 +1050,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 1d57af9bfab19ee40810eee683ac1950, type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_DeviceLostEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1058,7 +1060,11 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2232ec3f-5eea-41b6-82eb-bfd003ee303f
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

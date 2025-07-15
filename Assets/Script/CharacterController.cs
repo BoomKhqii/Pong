@@ -12,22 +12,20 @@ public class CharacterController : MonoBehaviour
 
     public Rigidbody2D rb;
 
-    void OnMove(InputAction.CallbackContext context) { movementInput = context.ReadValue<Vector2>(); }
+    public void OnMove(InputAction.CallbackContext context) { movementInput = context.ReadValue<Vector2>(); }
 
-    /*
+    
     void Update()
     {
+        Debug.Log("Movement Input: " + movementInput);
         if (movementInput != Vector2.zero)
         {
-            // Determine the angle of the movement input
-            float angle = Mathf.Atan2(movementInput.x, movementInput.y) * Mathf.Rad2Deg;
 
-            rb.AddForce(angle * Time.deltaTime * playerSpeed, ForceMode2D.Force);
-            transform.forward = moveDir;
+            rb.velocity = new Vector2(movementInput.x, movementInput.y) * playerSpeed;
+
+            Vector3 force = new Vector3(movementInput.x, 0, movementInput.y) * playerSpeed;
+            //rb.AddForce(force);
         }
-
-        playerVelocity.y += Time.deltaTime;
-        controller.Move(playerVelocity * Time.deltaTime);
     }
-    */
+    
 }
