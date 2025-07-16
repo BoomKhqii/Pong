@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class CharacterController : MonoBehaviour
 {
     // Player Movement
-    private Vector3 playerVelocity;
     private Vector2 movementInput = Vector2.zero;
     public float playerSpeed = 4.5f;
 
@@ -15,17 +14,9 @@ public class CharacterController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context) { movementInput = context.ReadValue<Vector2>(); }
 
     
-    void Update()
+    void FixedUpdate()
     {
-        Debug.Log("Movement Input: " + movementInput);
-        if (movementInput != Vector2.zero)
-        {
-
-            rb.velocity = new Vector2(movementInput.x, movementInput.y) * playerSpeed;
-
-            Vector3 force = new Vector3(movementInput.x, 0, movementInput.y) * playerSpeed;
-            //rb.AddForce(force);
-        }
+        rb.velocity = movementInput * playerSpeed;
     }
     
 }
