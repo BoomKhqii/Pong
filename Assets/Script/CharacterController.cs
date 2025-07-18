@@ -12,7 +12,7 @@ public class CharacterController : MonoBehaviour
 
     public Rigidbody2D rb;
 
-    public void OnMove(InputAction.CallbackContext context) { movementInput = context.ReadValue<Vector2>(); }
+    public void OnMove(InputAction.CallbackContext context) { movementInput = context.ReadValue<Vector2>(); Debug.Log("clicked");  }
 
     
     void FixedUpdate()

@@ -2,11 +2,11 @@
     "name": "Paddle",
     "maps": [
         {
-            "name": "Player",
+            "name": " Movement",
             "id": "5eed6483-4a22-4ac1-b833-be63f4bf7ba0",
             "actions": [
                 {
-                    "name": "Move",
+                    "name": "X-Y plane",
                     "type": "Value",
                     "id": "2232ec3f-5eea-41b6-82eb-bfd003ee303f",
                     "expectedControlType": "Vector2",
@@ -17,140 +17,57 @@
             ],
             "bindings": [
                 {
-                    "name": "WASD",
-                    "id": "00ca640b-d935-4593-8157-c05846ea39b3",
+                    "name": "Keybinds",
+                    "id": "c6eeca02-92e1-4aa3-a041-0ff129bce3e0",
                     "path": "Dpad",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "X-Y plane",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "up",
-                    "id": "e2062cb9-1b15-46a2-838c-2f8d72a0bdd9",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "up",
-                    "id": "8180e8bd-4097-4f4e-ab88-4523101a6ce9",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "320bffee-a40b-4347-ac70-c210eb8bc73a",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "1c5327b5-f71c-4f60-99c7-4e737386f1d1",
-                    "path": "<Keyboard>/downArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                }
-            ]
-        },
-        {
-            "name": "OneKeyboard",
-            "id": "827e39e2-3eaf-47d0-ae1b-882245ad1727",
-            "actions": [
-                {
-                    "name": "Move",
-                    "type": "Value",
-                    "id": "2b587149-46f5-4b80-96c6-d4b33150d8a1",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "Player 1",
-                    "id": "c1796b13-be41-49c2-adcb-044d59ee0eff",
-                    "path": "Dpad",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "4584936d-1736-4cc4-a909-9086f983b0e2",
+                    "id": "551a2d23-04b5-4174-96ab-b2bcdcbd42be",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Move",
+                    "action": "X-Y plane",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "8a00da25-7a00-4f63-b32c-e274ae9fc2a6",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Player 1",
-                    "id": "1c4dd5dc-6db8-48fc-913e-e7439769578b",
-                    "path": "Dpad",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": true,
-                    "isPartOfComposite": false
                 },
                 {
                     "name": "up",
-                    "id": "f7eab4bd-e92d-46aa-b895-c0bf3d435295",
+                    "id": "6ce82a9d-4808-4260-bd06-b6795de6da6d",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Move",
+                    "action": "X-Y plane",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "down",
-                    "id": "5e3b8c80-2362-4f46-a98d-654188982743",
+                    "id": "68623508-a7f1-4304-a19b-ba1930ccc39a",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "X-Y plane",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "0b3ac5a9-d2f3-4371-9100-2e7cc7341edd",
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Move",
+                    "action": "X-Y plane",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }
