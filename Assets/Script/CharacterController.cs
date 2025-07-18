@@ -9,6 +9,7 @@ public class CharacterController : MonoBehaviour
     private Vector2 movementInput = Vector2.zero;
     public float playerSpeed = 4.5f;
 
+
     public Rigidbody2D rb;
 
     public void OnMove(InputAction.CallbackContext context) { movementInput = context.ReadValue<Vector2>(); }

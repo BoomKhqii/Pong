@@ -272,7 +272,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &98914159
 Transform:
   m_ObjectHideFlags: 0
@@ -331,7 +331,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.15}
+  m_Size: {x: 0.04, y: 0.14}
   m_EdgeRadius: 0
 --- !u!212 &98914161
 SpriteRenderer:
@@ -397,7 +397,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 20
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -451,6 +451,10 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2232ec3f-5eea-41b6-82eb-bfd003ee303f
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow]
+  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 98914163}
         m_TargetAssemblyTypeName: CharacterController, Assembly-CSharp
@@ -464,8 +468,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 2232ec3f-5eea-41b6-82eb-bfd003ee303f
-    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow]
+    m_ActionId: 2b587149-46f5-4b80-96c6-d4b33150d8a1
+    m_ActionName: OneKeyboard/Move[/Keyboard/w,/Keyboard/s,/Keyboard/upArrow,/Keyboard/downArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1069,7 +1073,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.15}
+  m_Size: {x: 0.04, y: 0.14}
   m_EdgeRadius: 0
 --- !u!50 &906278038
 Rigidbody2D:
@@ -1079,14 +1083,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906278032}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1096,8 +1100,8 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  m_CollisionDetection: 1
+  m_Constraints: 5
 --- !u!114 &906278039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1138,6 +1142,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 2232ec3f-5eea-41b6-82eb-bfd003ee303f
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 906278036}
+        m_TargetAssemblyTypeName: CharacterController, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2b587149-46f5-4b80-96c6-d4b33150d8a1
+    m_ActionName: OneKeyboard/Move[/Keyboard/w,/Keyboard/s,/Keyboard/upArrow,/Keyboard/downArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
