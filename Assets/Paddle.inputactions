@@ -2,7 +2,7 @@
     "name": "Paddle",
     "maps": [
         {
-            "name": " Movement",
+            "name": "Keyboard",
             "id": "5eed6483-4a22-4ac1-b833-be63f4bf7ba0",
             "actions": [
                 {
@@ -70,6 +70,45 @@
                     "action": "X-Y plane",
                     "isComposite": false,
                     "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "Controller",
+            "id": "2dd4d13a-ddc3-48c6-8f38-38a81cda816b",
+            "actions": [
+                {
+                    "name": "X-Y plane",
+                    "type": "Button",
+                    "id": "1b7a6ad3-0d8d-4d3d-ade2-04f01b4bcf15",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2c8a3e09-1f5e-4570-866a-acb73785b4f5",
+                    "path": "<Joystick>/stick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joystick",
+                    "action": "X-Y plane",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7f2d21b0-0924-482e-90a0-86732cfdcc65",
+                    "path": "<Joystick>/stick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "X-Y plane",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
